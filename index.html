@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/datepicker.css">
+    <link rel="stylesheet" href="assets/css/style.css">    
+  </head>
+
+    <body>
+      <form onsubmit="return validate()" action="file:///C:/Users/sumit/Downloads/New_folder/JavaScript/Book%20Appointemet/2nd%20page/index.html">
+      <div class="inner-layer">
+          <div class="container">
+            <div class="row no-margin">
+                <div class="col-sm-7">
+                    <div class="form-data">
+                        <div class="form-head">
+                            <h2>Book Appointemnt</h2>
+                          </div>
+                          <div class="form-body">
+                            <div class="row form-row">
+                              <input  id="uname" placeholder="Enter Full name" class="form-control">
+                            </div>
+                            <div class="row form-row">
+                              <input type="text" id="number" placeholder="Enter Mobile Number" class="form-control" 
+                              name="" onkeyup="numberonly(this)">
+                            </div>
+                             <div class="row form-row">
+                              <input type="text" id="email" placeholder="Enter Email Adreess" class="form-control">
+                            </div>
+                           <div class="row form-row">
+                              <input id="dat" type="text" placeholder="Appointment Date" class="form-control"
+                              name="" onkeyup="numberonly(this)">
+                            </div>
+                            
+                            <h6>Address Details</h6>
+
+                             <div class="row form-row">
+                                <div class="col-sm-6">
+                                   <input type="text"  placeholder="Enter Area" class="form-control">
+                                </div>
+                                <div class="col-sm-6">
+                                   <input type="text" placeholder="Enter City" class="form-control">
+                                </div>
+                            </div>
+                             <div class="row form-row">
+                                <div class="col-sm-6">
+                                   <input type="text" placeholder="Enter State" class="form-control">
+                                </div>
+                                <div class="col-sm-6">
+                                   <input type="text" placeholder="Postal Code" class="form-control"
+                                   name="" onkeyup="numberonly(this)">
+                                </div>
+                            </div>
+
+                             <div class="row form-row">
+                               <button type="submit" class="btn btn-success btn-appointment" type="button" 
+                               onclick="openPopup()">Book Appointement</button>
+                               <div class="popup" id="popup">
+                                <img src="tick.png" alt="">
+                                <h2> Thank You</h2>
+                                <p> Your Booking is Confirmed</p>
+                                <button type="button" onclick="closePopup">OK </button>
+                               </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>  
+                      </div>
+                    </div>
+                  </div>
+                </body>
+                </html>
+              </form>
+                      
+      
+    </body>
+  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap-datepicker.js"></script>
+
+    <script>
+      $(document).ready(function(){
+          $("#dat").datepicker();
+      })
+      function validate() {
+      var username = document.getElementById("uname");
+      var usernumber = document.getElementById("number");
+      var useremail = document.getElementById("email");
+      if (username.value =="") 
+      {
+        alert("Name Can't be empty!");
+        return false;
+      }
+      else if(usernumber.value=="")
+      {
+        alert("Phone Number Can't be empty!"); 
+        return false;
+      }
+      else if(useremail.value=="")
+      {
+        alert("Email Can't be empty!");
+        return false;
+      }
+      else {
+        return true;
+
+      }
+      
+    }
+
+    let popup = document.getElementById("popup");
+    function openPopup(){
+      popup.classList.add("open-popup");
+      return true;
+    }
+    function closePopup(){
+      popup.classList.remove("open-popup");
+    }
+    function numberonly(input){
+      var num = /[^0-9]/gi;
+      input.value = input.value.replace(num,"");
+    }
+    </script>
+    
+  </body>
+</html>
